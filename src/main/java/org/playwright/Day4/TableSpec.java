@@ -15,7 +15,7 @@ public class TableSpec {
     @BeforeEach
     public void setUp() {
         playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+        Browser browser = playwright.chromium().launch(/*new BrowserType.LaunchOptions().setHeadless(false)*/);
         page = browser.newPage();
         tablesService = new TablesService(page);
     }

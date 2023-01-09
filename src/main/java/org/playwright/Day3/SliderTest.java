@@ -7,6 +7,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.playwright.PlaywrightPOMSeries.SandBoxSliderPage;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -27,28 +32,11 @@ public class SliderTest {
 
     @Test
     public void verifySliderFunctionality() {
-        Locator slider = sliderPage.getSlider();
-        String targetAmount = "29";
-        boolean isCompleted = false;
-        if (slider.isVisible()) {
-            while (!isCompleted) {
-                BoundingBox sliderBoundingBox = slider.boundingBox();
-                //if (sliderBoundingBox) {
-                    page.mouse().move(sliderBoundingBox.x + sliderBoundingBox.width / 2,
-                           sliderBoundingBox.y + sliderBoundingBox.height / 2);
-                    page.mouse().down();
-                     //12 pixels per step up & 12 pixels per step down
-                    page.mouse().move(sliderBoundingBox.x + 327, sliderBoundingBox.y + sliderBoundingBox.height / 2);
-                    page.mouse().up();
-
-                    if (targetAmount.equals("29")) {
-                        isCompleted = true;
-                    }
-                //}
-            }
-            page.waitForTimeout(5000);
-            assertEquals(sliderPage.getSliderResultValue(), targetAmount);
-        }
+        page.navigate("https://automatenow.io/sandbox-automation-testing-practice-website/slider/");
+        IntStream.range(0, 10).forEach(integer -> {
+            page.locator("#slideMe").press("ArrowRight");
+        });
+        assertThat(page.locator("#value")).containsText("35");
     }
 
     @AfterEach

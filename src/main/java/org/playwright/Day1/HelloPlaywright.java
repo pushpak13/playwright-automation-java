@@ -1,6 +1,4 @@
-package org.playwright.day1;
-
-
+package org.playwright.Day1;
 
 public class HelloPlaywright {
     public static void main(String[] args) {
@@ -13,5 +11,4 @@ public class HelloPlaywright {
         }
         System.out.println(message);
     }
-
 }

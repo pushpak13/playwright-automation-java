@@ -4,31 +4,40 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.*;
+import org.playwright.PlaywrightPOMSeries.SandBoxHoverPage;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
+
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class HoverSpec {
     Page page;
-    String baseURL = "https://automatenow.io/sandbox-automation-testing-practice-website/";
+    BrowserSetUp setUp;
+    SandBoxHoverPage hoverPage;
 
     @BeforeEach
     public void setUp() {
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(/*new BrowserType.LaunchOptions().setHeadless(false)*/);
-        page = browser.newPage();
-
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
+        hoverPage = new SandBoxHoverPage(page);
+        page.navigate(EnvConfigs.sandbox_Url);
+        assertThat(page).hasURL(EnvConfigs.sandbox_Url);
     }
 
     @AfterEach
-    public void tearDown() {
-        page.close();
+    public void tearDown()
+    {
+        page.context().browser().close();
     }
 
     @Test
     @DisplayName("should check for the changed status on hover event")
     public void verifyTheChangedTextOnHoverEvent() {
-        page.navigate(baseURL + "/hover/");
-        page.locator("#mouse_over").hover();
-        String changedText = page.locator("#mouse_over").textContent();
-        Assertions.assertEquals(changedText, "You did it!");
+        hoverPage.clickHoverLink();
+        assertThat(page).hasTitle(Constants.title_HoverPage);
+        hoverPage.hover();
+
     }
 
 

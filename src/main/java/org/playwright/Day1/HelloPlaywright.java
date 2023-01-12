@@ -1,14 +1,11 @@
 package org.playwright.Day1;
 
+import org.junit.jupiter.api.Assertions;
+import org.playwright.utils.Constants;
+
 public class HelloPlaywright {
     public static void main(String[] args) {
         String message = "Hello Playwright!";
-        if(message.contains("Playwright")) {
-            System.out.println("Text matches");
-        }
-        else {
-            System.out.println("Text does not matches");
-        }
-        System.out.println(message);
+        Assertions.assertEquals(message, Constants.msg_Playwright);
     }
 }

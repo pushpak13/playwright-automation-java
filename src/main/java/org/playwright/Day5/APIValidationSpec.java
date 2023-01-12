@@ -7,7 +7,8 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 import org.junit.jupiter.api.*;
 import org.playwright.models.BlogPosts;
-import org.playwright.utils.CONSTANTS;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
 import org.playwright.utils.MapperUtility;
 
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class APIValidationSpec {
     @BeforeEach
     public void setup() {
         Map<String, String> headers = new HashMap<>();
-        headers.putIfAbsent("Accept", "application/json");
+        headers.putIfAbsent(Constants.headers_Status, Constants.headers_ContentType);
         requestContext = Playwright.create().request().newContext(new APIRequest.NewContextOptions().setExtraHTTPHeaders(headers));
         blogPostData.put("userId", 1);
         blogPostData.put("title", "sunt aut facere repellat provident occaecati excepturi optio reprehenderit");
@@ -40,7 +41,7 @@ public class APIValidationSpec {
     @Test
     @DisplayName("should get all the posts")
     public void getAllBlogPosts() {
-        APIResponse apiResponse = this.requestContext.get(CONSTANTS.BASE_URL + CONSTANTS.POSTS_URL);
+        APIResponse apiResponse = this.requestContext.get(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL);
         assertThat(apiResponse).isOK();
         List<BlogPosts> parsedBlogPosts = MapperUtility.getPostsObjectFromJson(apiResponse);
         Assertions.assertTrue(parsedBlogPosts.size() > 0);
@@ -49,7 +50,7 @@ public class APIValidationSpec {
     @Test
     @DisplayName("should create a blog post")
     public void createABlogPost() {
-        APIResponse apiResponse = this.requestContext.post(CONSTANTS.BASE_URL + CONSTANTS.POSTS_URL, RequestOptions.create().setData(blogPostData));
+        APIResponse apiResponse = this.requestContext.post(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL, RequestOptions.create().setData(blogPostData));
         assertThat(apiResponse).isOK();
     }
 
@@ -57,14 +58,14 @@ public class APIValidationSpec {
     @DisplayName("should update a blog post")
     public void updateABlogPost() {
         blogPostData.replace("userId", 10);
-        APIResponse apiResponse = this.requestContext.put(CONSTANTS.BASE_URL + CONSTANTS.POSTS_URL + "/100", RequestOptions.create().setData(blogPostData));
+        APIResponse apiResponse = this.requestContext.put(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL + Constants.id_POST, RequestOptions.create().setData(blogPostData));
         assertThat(apiResponse).isOK();
     }
 
     @Test
     @DisplayName("should delete a blog post")
     public void deleteABlogPost() {
-        APIResponse apiResponse = this.requestContext.delete(CONSTANTS.BASE_URL + CONSTANTS.POSTS_URL + "/100");
+        APIResponse apiResponse = this.requestContext.delete(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL + Constants.id_POST);
         assertThat(apiResponse).isOK();
     }
 

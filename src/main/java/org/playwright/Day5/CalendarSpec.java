@@ -1,49 +1,42 @@
 package org.playwright.Day5;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.options.AriaRole;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.playwright.PlaywrightPOMSeries.SandBoxCalendarPage;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalendarSpec {
 
     Page page;
-    String baseURL = "https://automatenow.io/sandbox-automation-testing-practice-website/";
+    BrowserSetUp setUp;
+    SandBoxCalendarPage calenderPage;
 
     @BeforeEach
     public void setUp() {
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch();
-        page = browser.newPage();
-        page.navigate(baseURL + "/calendars/");
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
+        calenderPage = new SandBoxCalendarPage(page);
+        page.navigate(EnvConfigs.sandbox_Url);
+        Assertions.assertTrue(page.url().equals(EnvConfigs.sandbox_Url));
     }
 
     @AfterEach
-    public void tearDown() {
-        page.close();
+    public void tearDown()
+    {
+        page.context().browser().close();
     }
 
     @Test
     @DisplayName("should check for a valid date of a calendar")
     public void verifyForAValidDateOfACalendar() {
-        page.click("//input[@class='date jp-contact-form-date hasDatepicker']");
-        Locator datePicker = page.locator("//input[@class='date jp-contact-form-date hasDatepicker']");
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMMM DD, YYYY");
-        String dateToBeSelectedAndVerified = LocalDateTime.now().plusDays(1).format(dateTimeFormatter);
-        datePicker.type(dateToBeSelectedAndVerified);
-        datePicker.press("Tab");
-        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-        String fieldValue = page.locator("//div[@class='field-value']").innerText();
-        assertEquals(dateToBeSelectedAndVerified, fieldValue);
+        calenderPage.clickCalendarLink();
+        assertThat(page).hasTitle(Constants.title_CalendarPage);
+        calenderPage.verifyValidDateForCalendar();
+
     }
 }

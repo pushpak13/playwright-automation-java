@@ -11,6 +11,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.playwright.models.SandBoxFormDataType;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
 import org.playwright.utils.SandboxFormDataProvisionService;
 
 import java.util.regex.Pattern;
@@ -19,23 +22,21 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class FormFieldsSpec {
     Page page;
-
+    BrowserSetUp setUp;
     SandboxFormDataProvisionService sandboxFormDataProvisionService;
-    String baseURL = "https://automatenow.io/sandbox-automation-testing-practice-website/";
 
     @BeforeEach
     public void setUp() {
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
         sandboxFormDataProvisionService = new SandboxFormDataProvisionService();
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch();
-        page = browser.newPage();
-        page.navigate(baseURL + "/form-fields/");
+        page.navigate(EnvConfigs.sandbox_Url + "/form-fields/");
 
     }
 
     @AfterEach
     public void tearDown() {
-        page.close();
+        page.context().browser().close();
     }
 
     @Test

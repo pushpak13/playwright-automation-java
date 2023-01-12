@@ -8,31 +8,34 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class AccordionSpec {
     Page page;
-    String baseURL = "https://automatenow.io/sandbox-automation-testing-practice-website/";
+    BrowserSetUp setUp;
 
     @BeforeEach
     public void setUp() {
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch();
-        page = browser.newPage();
-        page.navigate(baseURL + "/accordions/");
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
+        page.navigate(EnvConfigs.sandbox_Url + Constants.link_Accordion);
+        assertThat(page).hasTitle(Constants.title_AccordionPage);
     }
 
     @AfterEach
     public void tearDown() {
-        page.close();
+        page.context().browser().close();
     }
 
     @Test
     @DisplayName("should show the text inside the accordion when expanded")
     public void verifyIfTheTextInsideTheAccordionIsVisible() {
-        page.getByText("Click to see more").click();
-        Locator actualAccordionText = page.getByText("This is an accordion item.");
+        page.getByText(Constants.text_clickAccordion).click();
+        Locator actualAccordionText = page.getByText(Constants.text_AccordionItem);
         assertThat(actualAccordionText).isVisible();
     }
 
@@ -40,11 +43,11 @@ public class AccordionSpec {
     @DisplayName("should not show the text inside the accordion when contracted")
     public void verifyThatTheWhenClickedTwiceTheAccordionShouldContract() {
         // Clicking to expand the accordion
-        page.getByText("Click to see more").click();
-        Locator actualAccordionText = page.getByText("This is an accordion item.");
+        page.getByText(Constants.text_clickAccordion).click();
+        Locator actualAccordionText = page.getByText(Constants.text_AccordionItem);
         assertThat(actualAccordionText).isVisible();
         // Clicking again to contract the accordion
-        page.getByText("Click to see more").click();
+        page.getByText(Constants.text_clickAccordion).click();
         assertThat(actualAccordionText).not().isVisible();
     }
 

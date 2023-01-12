@@ -5,31 +5,38 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.playwright.PlaywrightPOMSeries.SandBoxPopupPage;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class PopupTest {
     Page page;
+    BrowserSetUp setUp;
     SandBoxPopupPage popupPage;
 
     @BeforeEach
     public void setUp() {
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        page = browser.newPage();
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
         popupPage = new SandBoxPopupPage(page);
-        page.navigate("https://automatenow.io/sandbox-automation-testing-practice-website/");
-        popupPage.clickOnPopups();
+        page.navigate(EnvConfigs.sandbox_Url);
+        assertThat(page).hasURL(EnvConfigs.sandbox_Url);
+
     }
 
     @Test
     public void verifyAlertPopup() {
+        popupPage.clickOnPopups();
+        assertThat(page).hasTitle(Constants.title_PopupPage);
         page.onDialog(dialog -> {
              String text = dialog.message();
-             System.out.println(text);
+             Assertions.assertEquals(text, Constants.msg_AlertPopup);
              dialog.accept();
         });
         popupPage.clickOnAlertButton();
@@ -38,74 +45,59 @@ public class PopupTest {
 
     @Test
     public void verifyConfirmPopupClose() {
+        popupPage.clickOnPopups();
+        assertThat(page).hasTitle(Constants.title_PopupPage);
         page.onDialog(dialog -> {
             dialog.dismiss();
         });
         popupPage.clickOnConfirmButton();
         String cancelResult = popupPage.getConfirmPopupResultMessage();
-        if(cancelResult.contains("Cancel")) {
-            System.out.println("Confirm popup cancelled");
-            System.out.println(cancelResult);
-        }
-        else{
-            System.out.println("Confirm popup not cancelled");
-        }
+        Assertions.assertEquals(cancelResult, Constants.cancelMsg_ConfirmPopup);
 
     }
 
     @Test
     public void verifyConfirmPopupAccept() {
+        popupPage.clickOnPopups();
+        assertThat(page).hasTitle(Constants.title_PopupPage);
         page.onDialog(dialog -> {
             dialog.accept();
         });
         popupPage.clickOnConfirmButton();
         String okResult = popupPage.getConfirmPopupResultMessage();
-        if(okResult.contains("OK")) {
-            System.out.println("Confirm popup accepted");
-            System.out.println(okResult);
-        }
-        else{
-            System.out.println("Confirm popup not accepted");
-        }
+        Assertions.assertEquals(okResult, Constants.okMsg_ConfirmPopup);
 
     }
 
     @Test
     public void verifyPromptPopupWithData() {
+        popupPage.clickOnPopups();
+        assertThat(page).hasTitle(Constants.title_PopupPage);
         page.onDialog(dialog -> {
-            dialog.accept("Playwright");
+            dialog.accept(Constants.text_PromptPopup);
         });
         popupPage.clickOnPromptButton();
         String promptResult = popupPage.getPromptPopupResultMessage();
-        if(promptResult.contains("Playwright")) {
-            System.out.println("Prompt box with data and accepted");
-            System.out.println(promptResult);
-        }
-        else{
-            System.out.println("Prompt input is without data");
-        }
+        Assertions.assertEquals(promptResult, Constants.msg_PromptPopup);
+
     }
 
     @Test
     public void verifyPromptPopupCloseWithoutData() {
+        popupPage.clickOnPopups();
+        assertThat(page).hasTitle(Constants.title_PopupPage);
         page.onDialog(dialog -> {
             dialog.dismiss();
         });
         popupPage.clickOnPromptButton();
         String promptResult = popupPage.getPromptPopupResultMessage();
-        if(promptResult.contains("Fine, be that way")) {
-            System.out.println("Prompt popup is cancelled without data");
-            System.out.println(promptResult);
-        }
-        else{
-            System.out.println("Prompt is not cancelled");
-        }
+        Assertions.assertEquals(promptResult, Constants.cancelMsg_PromptPopup);
 
     }
 
     @AfterEach
     public void tearDown() {
-        page.close();
+        page.context().browser().close();
 
     }
 }

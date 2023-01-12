@@ -2,35 +2,47 @@ package org.playwright.Day5;
 
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
+import org.playwright.PlaywrightPOMSeries.SandBoxBrokenImagesPage;
+import org.playwright.utils.BrowserSetUp;
+import org.playwright.utils.Constants;
+import org.playwright.utils.EnvConfigs;
+import org.playwright.utils.Locators;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import java.util.List;
 
 public class BrokenImagesSpec {
-    private static final String xPathForImageElements = "//div[@class='wp-block-columns is-layout-flex wp-container-4']//div[@class='wp-block-column is-layout-flow']//img";
-    Page page;
 
+    Page page;
+    BrowserSetUp setUp;
+    SandBoxBrokenImagesPage brokenImagesPage;
     APIRequestContext request;
-    String baseURL = "https://automatenow.io/sandbox-automation-testing-practice-website/";
+    Playwright playwright;
 
     @BeforeEach
     public void setUp() {
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch();
-        page = browser.newPage();
+        setUp = new BrowserSetUp();
+        page = setUp.initBrowser(Constants.browser_Name);
+        brokenImagesPage = new SandBoxBrokenImagesPage(page);
+        page.navigate(EnvConfigs.sandbox_Url);
+        Assertions.assertTrue(page.url().equals(EnvConfigs.sandbox_Url));
         request = playwright.request().newContext();
     }
 
     @AfterEach
-    public void tearDown() {
-        page.close();
+    public void tearDown()
+    {
+        page.context().browser().close();
     }
 
     @Test
     @DisplayName("Test to check for broken images")
     public void verifyAllTheImagesInThePageAreBrokenOrNot() {
-        page.navigate(baseURL + "/broken-images/");
-        List<String> images = page.querySelectorAll(xPathForImageElements).stream().map(elementHandle -> elementHandle.getAttribute("src")).toList();
-        images.stream().filter(img -> img.contains("http"))
+        brokenImagesPage.clickBrokenImagesLink();
+        assertThat(page).hasTitle(Constants.title_BrokenImagesPage);
+        List<String> images = page.querySelectorAll(Locators.locator_imageElements).stream()
+                .map(elementHandle -> elementHandle.getAttribute(Constants.text_SRC)).toList();
+        images.stream().filter(img -> img.contains(Constants.text_HTTP))
                 .forEach(image -> {
                     APIResponse apiResponse = request.get(image);
                     Assertions.assertTrue(apiResponse.ok());

@@ -6,7 +6,7 @@ import com.microsoft.playwright.Page;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class SandBoxModalPage {
-    Page page;
+     Page page;
 
     //String Locator
     private String link_modal = "text=Modals";
@@ -25,13 +25,14 @@ public class SandBoxModalPage {
         this.page.click(link_modal);
     }
 
-    public void clickOnSimpleModal()
-    {
+    public void clickOnSimpleModal() {
         this.page.click(button_simpleModal);
     }
 
-    public void closeSimpleModal() {
+    public void closeSimpleModal()
+    {
          this.page.click(button_close);
+         this.page.waitForTimeout(2000);
     }
 
     public Locator getSimpleModalLocator() {

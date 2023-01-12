@@ -5,15 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae5a14e3-0b25-4ac1-b7ed-a0d6894ea4f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/ModalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/PopupTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/SliderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxModalPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxPopupPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSliderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxBrokenImagesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxCalendarPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxHoverPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/BrowserSetUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Locators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/day1/HelloPlaywright.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day1/HelloPlaywright.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day1/HelloPlaywright.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day1/HelloPlaywright.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day2/SauceDemoLoginSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day2/SauceDemoLoginSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/ModalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/ModalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/PopupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/PopupTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/SliderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/SliderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/HoverSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/HoverSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/TableSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/TableSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/APIValidationSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/APIValidationSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/AccordionSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/AccordionSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/BrokenImagesSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/BrokenImagesSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/CalendarSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/CalendarSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/FormFieldsSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/FormFieldsSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/SearchSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/SearchSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxModalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxModalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSliderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSliderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/TablesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/TablesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/CONSTANTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/EnvConfigs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Day1" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,93 +86,93 @@
       <recent name="org.playwright.day1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SliderTest">
-    <configuration name="PopupTest.verifyConfirmPopupAccept" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-initial" />
+  <component name="RunManager" selected="JUnit.CalendarSpec.verifyForAValidDateOfACalendar">
+    <configuration name="AccordionSpec.verifyIfTheTextInsideTheAccordionIsVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.playwright.Day3.*" />
+          <option name="PATTERN" value="org.playwright.Day5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day3" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day3.PopupTest" />
-      <option name="METHOD_NAME" value="verifyConfirmPopupAccept" />
+      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.AccordionSpec" />
+      <option name="METHOD_NAME" value="verifyIfTheTextInsideTheAccordionIsVisible" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PopupTest.verifyConfirmPopupClose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-initial" />
+    <configuration name="BrokenImagesSpec.verifyAllTheImagesInThePageAreBrokenOrNot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.playwright.Day3.*" />
+          <option name="PATTERN" value="org.playwright.Day5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day3" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day3.PopupTest" />
-      <option name="METHOD_NAME" value="verifyConfirmPopupClose" />
+      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.BrokenImagesSpec" />
+      <option name="METHOD_NAME" value="verifyAllTheImagesInThePageAreBrokenOrNot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PopupTest.verifyPromptPopupCloseWithoutData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-initial" />
+    <configuration name="CalendarSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.playwright.Day3.*" />
+          <option name="PATTERN" value="org.playwright.Day5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day3" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day3.PopupTest" />
-      <option name="METHOD_NAME" value="verifyPromptPopupCloseWithoutData" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PopupTest.verifyPromptPopupWithData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-initial" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.playwright.Day3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day3" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day3.PopupTest" />
-      <option name="METHOD_NAME" value="verifyPromptPopupWithData" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SliderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-initial" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.playwright.Day3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day3" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day3.SliderTest" />
+      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.CalendarSpec" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalendarSpec.verifyForAValidDateOfACalendar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.playwright.Day5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.CalendarSpec" />
+      <option name="METHOD_NAME" value="verifyForAValidDateOfACalendar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HoverSpec.verifyTheChangedTextOnHoverEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.playwright.Day4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.playwright.Day4" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day4.HoverSpec" />
+      <option name="METHOD_NAME" value="verifyTheChangedTextOnHoverEvent" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SliderTest" />
-        <item itemvalue="JUnit.PopupTest.verifyPromptPopupCloseWithoutData" />
-        <item itemvalue="JUnit.PopupTest.verifyPromptPopupWithData" />
-        <item itemvalue="JUnit.PopupTest.verifyConfirmPopupAccept" />
-        <item itemvalue="JUnit.PopupTest.verifyConfirmPopupClose" />
+        <item itemvalue="JUnit.CalendarSpec.verifyForAValidDateOfACalendar" />
+        <item itemvalue="JUnit.CalendarSpec" />
+        <item itemvalue="JUnit.BrokenImagesSpec.verifyAllTheImagesInThePageAreBrokenOrNot" />
+        <item itemvalue="JUnit.AccordionSpec.verifyIfTheTextInsideTheAccordionIsVisible" />
+        <item itemvalue="JUnit.HoverSpec.verifyTheChangedTextOnHoverEvent" />
       </list>
     </recent_temporary>
   </component>

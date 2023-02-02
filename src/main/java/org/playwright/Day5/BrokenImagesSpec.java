@@ -21,17 +21,18 @@ public class BrokenImagesSpec {
 
     @BeforeEach
     public void setUp() {
-        setUp = new BrowserSetUp();
-        page = setUp.initBrowser(Constants.browser_Name);
+        Playwright playwright = Playwright.create();
+        Browser browser = playwright.chromium().launch();
+        page = browser.newPage();
+        request = playwright.request().newContext();
         brokenImagesPage = new SandBoxBrokenImagesPage(page);
         page.navigate(EnvConfigs.sandbox_Url);
         Assertions.assertTrue(page.url().equals(EnvConfigs.sandbox_Url));
-        request = playwright.request().newContext();
+
     }
 
     @AfterEach
-    public void tearDown()
-    {
+    public void tearDown() {
         page.context().browser().close();
     }
 

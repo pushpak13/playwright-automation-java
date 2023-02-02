@@ -10,29 +10,32 @@ import org.playwright.models.BlogPosts;
 import org.playwright.utils.Constants;
 import org.playwright.utils.EnvConfigs;
 import org.playwright.utils.MapperUtility;
-
+import org.playwright.utils.TestDataProvider;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class APIValidationSpec {
-
+public class APIValidationSpec extends TestDataProvider {
+    MapperUtility mapperUtility;
     APIRequestContext requestContext;
+
     Map<String, Object> blogPostData = new HashMap();
 
-    @BeforeEach
-    public void setup() {
+    @BeforeTest //(dataProvider = "PostData")
+    public void setup(int userID, String title, String body) {
         Map<String, String> headers = new HashMap<>();
+        mapperUtility = new MapperUtility();
         headers.putIfAbsent(Constants.headers_Status, Constants.headers_ContentType);
         requestContext = Playwright.create().request().newContext(new APIRequest.NewContextOptions().setExtraHTTPHeaders(headers));
-        blogPostData.put("userId", 1);
-        blogPostData.put("title", "sunt aut facere repellat provident occaecati excepturi optio reprehenderit");
-        blogPostData.put("body", "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto");
+        blogPostData.put("userId", userID);
+        blogPostData.put("title", title);
+        blogPostData.put("body", body);
     }
 
-    @AfterEach
+    @AfterTest
     public void breakup() {
         requestContext = null;
         blogPostData.clear();
@@ -43,7 +46,7 @@ public class APIValidationSpec {
     public void getAllBlogPosts() {
         APIResponse apiResponse = this.requestContext.get(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL);
         assertThat(apiResponse).isOK();
-        List<BlogPosts> parsedBlogPosts = MapperUtility.getPostsObjectFromJson(apiResponse);
+        List<BlogPosts> parsedBlogPosts = mapperUtility.getPostsObjectFromJson(apiResponse);
         Assertions.assertTrue(parsedBlogPosts.size() > 0);
     }
 
@@ -54,10 +57,10 @@ public class APIValidationSpec {
         assertThat(apiResponse).isOK();
     }
 
-    @Test
+    @Test //(dataProvider = "PutData")
     @DisplayName("should update a blog post")
-    public void updateABlogPost() {
-        blogPostData.replace("userId", 10);
+    public void updateABlogPost(int userID) {
+        blogPostData.replace("userId", userID);
         APIResponse apiResponse = this.requestContext.put(EnvConfigs.JSON_URL + EnvConfigs.POSTS_URL + Constants.id_POST, RequestOptions.create().setData(blogPostData));
         assertThat(apiResponse).isOK();
     }

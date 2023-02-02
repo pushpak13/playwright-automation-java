@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.playwright.utils.BrowserSetUp;
 import org.playwright.utils.Constants;
 import org.playwright.utils.EnvConfigs;
-
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class AccordionSpec {

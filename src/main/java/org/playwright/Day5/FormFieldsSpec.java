@@ -6,10 +6,8 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.LoadState;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.playwright.PlaywrightPOMSeries.SandBoxFormDataPage;
 import org.playwright.models.SandBoxFormDataType;
 import org.playwright.utils.BrowserSetUp;
 import org.playwright.utils.Constants;
@@ -24,13 +22,16 @@ public class FormFieldsSpec {
     Page page;
     BrowserSetUp setUp;
     SandboxFormDataProvisionService sandboxFormDataProvisionService;
+    SandBoxFormDataPage sandBoxFormDataPage;
 
     @BeforeEach
     public void setUp() {
         setUp = new BrowserSetUp();
         page = setUp.initBrowser(Constants.browser_Name);
         sandboxFormDataProvisionService = new SandboxFormDataProvisionService();
-        page.navigate(EnvConfigs.sandbox_Url + "/form-fields/");
+        sandBoxFormDataPage = new SandBoxFormDataPage(page);
+        page.navigate(EnvConfigs.sandbox_Url);
+        Assertions.assertTrue(page.url().contains(Constants.homePage_SandBoxUrlText));
 
     }
 
@@ -42,7 +43,8 @@ public class FormFieldsSpec {
     @Test
     @DisplayName("should validate the form fields with valid data")
     public void verifyValidFormData() {
-        assertThat(page).hasURL(Pattern.compile("/form-fields/"));
+        sandBoxFormDataPage.clickFormFieldsLink();
+        assertThat(page).hasURL(Pattern.compile(Constants.link_FormFields));
         Locator inputTextForName = page.getByLabel("Name(required)");
         inputTextForName.click();
         SandBoxFormDataType validFormData = sandboxFormDataProvisionService.getValidFormData();
@@ -59,7 +61,8 @@ public class FormFieldsSpec {
     @Test
     @DisplayName("should validate the form with required valid data")
     public void verifyRequiredFormData() {
-        assertThat(page).hasURL(Pattern.compile("/form-fields/"));
+        sandBoxFormDataPage.clickFormFieldsLink();
+        assertThat(page).hasURL(Pattern.compile(Constants.link_FormFields));
         Locator inputTextForName = page.getByLabel("Name(required)");
         inputTextForName.click();
         SandBoxFormDataType requiredFormData = sandboxFormDataProvisionService.getValidFormData();
@@ -72,7 +75,8 @@ public class FormFieldsSpec {
     @Test
     @DisplayName("should validate the form with invalid data")
     public void verifyInvalidFormData() {
-        assertThat(page).hasURL(Pattern.compile("/form-fields/"));
+        sandBoxFormDataPage.clickFormFieldsLink();
+        assertThat(page).hasURL(Pattern.compile(Constants.link_FormFields));
         page.waitForLoadState(LoadState.LOAD);
         page.getByLabel("Name(required)").click();
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();

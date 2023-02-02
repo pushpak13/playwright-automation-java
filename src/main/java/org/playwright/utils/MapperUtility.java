@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class MapperUtility {
-    static ObjectMapper objectMapper = new ObjectMapper();
+     ObjectMapper objectMapper = new ObjectMapper();
 
-    public static List<BlogPosts> getPostsObjectFromJson(APIResponse response) {
+    public List<BlogPosts> getPostsObjectFromJson(APIResponse response) {
 
         try {
             String toBeParsed = response.text();

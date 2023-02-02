@@ -6,7 +6,6 @@ import org.playwright.PlaywrightPOMSeries.SandBoxCalendarPage;
 import org.playwright.utils.BrowserSetUp;
 import org.playwright.utils.Constants;
 import org.playwright.utils.EnvConfigs;
-
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

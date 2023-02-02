@@ -16,8 +16,7 @@ public class SandBoxModalPage {
     private String field_name = "id=g1051-name";
 
     //Constructor
-    public SandBoxModalPage(Page  page)
-    {
+    public SandBoxModalPage(Page  page) {
         this.page = page;
     }
 

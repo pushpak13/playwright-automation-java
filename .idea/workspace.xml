@@ -5,21 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae5a14e3-0b25-4ac1-b7ed-a0d6894ea4f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxBrokenImagesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxCalendarPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxHoverPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/BrowserSetUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Locators.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SampleFiles/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SampleFiles/mango.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/AllureReport/AllureSandboxNavigationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/AllureReport/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/AllureReport/ScreenshotConcept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/AllureReport/TestAllureListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day6/ElementHandlesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day6/EmulationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day6/FileDownloadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day6/FileUploadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day7/IFramesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day7/MouseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day7/NetworkTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day7/RecordVideoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day7/WebSocketTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExcelUtility/ExcelToJsonConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExtentReport/ExtentManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExtentReport/ExtentReportListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExtentReport/PlaywrightFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExtentReport/SandboxNavigationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/ExtentReport/Utility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/EmulationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/IFramesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/NetworkResponsePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxFormDataPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandboxNavigationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/WebSocketServerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/EmulationBrowserSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/TestDataProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day1/HelloPlaywright.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day1/HelloPlaywright.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day2/SauceDemoLoginSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day2/SauceDemoLoginSpec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/ModalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/ModalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/PopupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/PopupTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/SliderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day3/SliderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/HoverSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/HoverSpec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/TableSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day4/TableSpec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/APIValidationSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/APIValidationSpec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/AccordionSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/AccordionSpec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/BrokenImagesSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/BrokenImagesSpec.java" afterDir="false" />
@@ -27,9 +44,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/FormFieldsSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/FormFieldsSpec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/SearchSpec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/Day5/SearchSpec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxModalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxModalPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSliderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/SandBoxSliderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/TablesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/PlaywrightPOMSeries/TablesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/CONSTANTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/EnvConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/BrowserSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/BrowserSetUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/EnvConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/EnvConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Locators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/Locators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/playwright/utils/MapperUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/playwright/utils/MapperUtility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,19 +94,23 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Sulaiman.Zameer/IdeaProjects/playwright-automation-java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.archetype.catalogs&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sulaiman.Zameer\IdeaProjects\playwright-automation-java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pushpak.madhavan\Downloads\Playwright-Java\playwright-automation-java" />
+      <recent name="C:\Users\pushpak.madhavan\Downloads\Playwright-Java\playwright-automation-java\src\SampleFiles" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.playwright.day1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalendarSpec.verifyForAValidDateOfACalendar">
-    <configuration name="AccordionSpec.verifyIfTheTextInsideTheAccordionIsVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IFramesTest.iFrameTest">
+    <configuration name="APIValidationSpec.createABlogPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
@@ -96,14 +119,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.playwright.Day5" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.AccordionSpec" />
-      <option name="METHOD_NAME" value="verifyIfTheTextInsideTheAccordionIsVisible" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.APIValidationSpec" />
+      <option name="METHOD_NAME" value="createABlogPost" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrokenImagesSpec.verifyAllTheImagesInThePageAreBrokenOrNot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="APIValidationSpec.updateABlogPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
@@ -112,67 +135,70 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.playwright.Day5" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.BrokenImagesSpec" />
-      <option name="METHOD_NAME" value="verifyAllTheImagesInThePageAreBrokenOrNot" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.APIValidationSpec" />
+      <option name="METHOD_NAME" value="updateABlogPost(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalendarSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IFramesTest.iFrameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.playwright.Day5.*" />
+          <option name="PATTERN" value="org.playwright.Day7.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.CalendarSpec" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalendarSpec.verifyForAValidDateOfACalendar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="playwright-automation-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.playwright.Day5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day5" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day5.CalendarSpec" />
-      <option name="METHOD_NAME" value="verifyForAValidDateOfACalendar" />
+      <option name="PACKAGE_NAME" value="org.playwright.Day7" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.Day7.IFramesTest" />
+      <option name="METHOD_NAME" value="iFrameTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HoverSpec.verifyTheChangedTextOnHoverEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllureSandboxNavigationTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="playwright-automation-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.playwright.Day4.*" />
+          <option name="PATTERN" value="org.playwright.AllureReport.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.playwright.Day4" />
-      <option name="MAIN_CLASS_NAME" value="org.playwright.Day4.HoverSpec" />
-      <option name="METHOD_NAME" value="verifyTheChangedTextOnHoverEvent" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="org.playwright.AllureReport" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.AllureReport.AllureSandboxNavigationTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SandboxNavigationTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="playwright-automation-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.playwright.ExtentReport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.playwright.ExtentReport" />
+      <option name="MAIN_CLASS_NAME" value="org.playwright.ExtentReport.SandboxNavigationTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CalendarSpec.verifyForAValidDateOfACalendar" />
-        <item itemvalue="JUnit.CalendarSpec" />
-        <item itemvalue="JUnit.BrokenImagesSpec.verifyAllTheImagesInThePageAreBrokenOrNot" />
-        <item itemvalue="JUnit.AccordionSpec.verifyIfTheTextInsideTheAccordionIsVisible" />
-        <item itemvalue="JUnit.HoverSpec.verifyTheChangedTextOnHoverEvent" />
+        <item itemvalue="JUnit.IFramesTest.iFrameTest" />
+        <item itemvalue="TestNG.AllureSandboxNavigationTest" />
+        <item itemvalue="TestNG.SandboxNavigationTest" />
+        <item itemvalue="JUnit.APIValidationSpec.createABlogPost" />
+        <item itemvalue="JUnit.APIValidationSpec.updateABlogPost" />
       </list>
     </recent_temporary>
   </component>

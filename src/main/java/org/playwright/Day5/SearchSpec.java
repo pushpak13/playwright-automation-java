@@ -21,7 +21,8 @@ public class SearchSpec {
         setUp = new BrowserSetUp();
         page = setUp.initBrowser(Constants.browser_Name);
         searchPage = new SandBoxSearchPage(page);
-        page.navigate(EnvConfigs.sandbox_Url + "/search-box/");
+        page.navigate(EnvConfigs.sandbox_Url);
+        Assertions.assertTrue(page.url().contains(Constants.homePage_SandBoxUrlText));
     }
 
     @AfterEach
